@@ -78,10 +78,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</footer>
   <!-- ================ End footer Area ================= -->
 
-  <?php wp_enqueue_script('jquery', get_template_directory_uri().'/js/jquery-3.2.1.min.js', ['jquery']); ?>
-  <?php wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.bundle.min.js'); ?>
-  <?php wp_enqueue_script('jquery.ajaxchimp', get_template_directory_uri().'/js/jquery.ajaxchimp.min.js'); ?>
-  <?php wp_enqueue_script('mail-script', get_template_directory_uri().'/js/mail-script.js'); ?>
   <?php wp_enqueue_script('main', get_template_directory_uri().'/js/main.js'); ?>
   
 <?php wp_footer(); ?>

@@ -120,64 +120,64 @@ function idc_blog_content_width() {
 add_action( 'after_setup_theme', 'idc_blog_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function idc_blog_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'idc_blog' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'idc_blog' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'idc_blog_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function idc_blog_scripts() {
 	wp_enqueue_style( 'idc_blog-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'idc_blog-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'idc_blog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_script('idc_blog-jquery', get_template_directory_uri().'/js/jquery-3.2.1.min.js', array(), _S_VERSION );
+	wp_enqueue_script('idc_blog-bootstrap', get_template_directory_uri().'/js/bootstrap.bundle.min.js', array(), _S_VERSION );
+	wp_enqueue_script('jquery.ajaxchimp', get_template_directory_uri().'/js/jquery.ajaxchimp.min.js', array(), _S_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'idc_blog_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+if ( !function_exists( 'wp_get_cat_postcount' ) ) {
+	function wp_get_cat_postcount($id) {
+	    $cat = get_category($id);
+	    $count = (int) $cat->count;
+	    $taxonomy = 'category';
+	    $args = array(
+	        'child_of' => $id,
+	    );
+	    $tax_terms = get_terms($taxonomy,$args);
+	    foreach ($tax_terms as $tax_term) {
+	        $count +=$tax_term->count;
+	    }
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+	    return $count;
+	}
 }
 
+
+if ( ! function_exists( 'twentyten_comment' ) ) :
+
+function twentyten_comment( $comment, $args, $depth ) {
+    ?>
+    <div class="comment-list <?php comment_class(); ?>" id="li-comment-<?php comment_ID() ?>">
+      <div class="single-comment justify-content-between d-flex">
+         <div class="user justify-content-between d-flex">
+            <div class="thumb">
+               <?php echo get_avatar($comment,$size='80'); ?>
+            </div>
+            <div class="desc">
+               <p class="comment"><?php comment_text(); ?></p>
+               <?php if ( $comment->comment_approved == '0' ) : ?>
+                <em><?php _e( 'Bình luận của bạn đang chờ kiểm duyệt.', 'twentyten' ); ?></em>
+	                <br />
+	            <?php endif; ?>
+               <div class="d-flex justify-content-between">
+                  <div class="d-flex align-items-center">
+                     <h5>
+                        <a href="#"><?php echo get_comment_author(); ?></a>
+                     </h5>
+                     <p class="date"><?php printf(/* translators: 1: date and time(s). */ esc_html__('%1$s lúc %2$s' , '5balloons_theme'), get_comment_date(),  get_comment_time()) ?></p>
+                  </div>
+                  <div class="reply-btn">
+                  	<a href="#" class="btn-reply text-uppercase"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+<?php } endif; ?>

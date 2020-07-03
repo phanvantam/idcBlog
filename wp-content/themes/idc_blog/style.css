@@ -1783,6 +1783,10 @@ h1, h2, h3, h4, h5, h6 {
 .blog_right_sidebar .popular_post_widget .post_item+.post_item {
     margin-top: 20px
 }
+.blog_right_sidebar .popular_post_widget .post_item>a>img{
+    max-width: 80px;
+    max-height: 80px;
+}
 .blog_right_sidebar .tag_cloud_widget ul li {
     display: inline-block
 }
@@ -1822,7 +1826,10 @@ h1, h2, h3, h4, h5, h6 {
 .blog-pagination {
     margin-top: 80px
 }
-.blog-pagination .page-link {
+.blog-pagination .screen-reader-text{
+    display: none;
+}
+.blog-pagination .page-numbers {
     font-size: 14px;
     position: relative;
     display: block;
@@ -1835,20 +1842,21 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0!important;
     color: #8a8a8a;
     border: 1px solid #f0e9ff;
-    margin-right: 10px
+    margin-right: 10px;
+    float: left;
 }
-.blog-pagination .page-link i, .blog-pagination .page-link span {
+.blog-pagination .page-numbers i, .blog-pagination .page-numbers span {
     font-size: 13px
 }
-.blog-pagination .page-link:hover {
+.blog-pagination .page-numbers:hover {
     background-color: #fbf9ff
 }
-.blog-pagination .page-item.active .page-link {
+.blog-pagination .page-numbers.current{
     background-color: #fbf9ff;
     border-color: #f0e9ff;
     color: #888
 }
-.blog-pagination .page-item:last-child .page-link {
+.blog-pagination .page-numbers:last-child {
     margin-right: 0
 }
 .single-post-area .blog_details {
@@ -2063,6 +2071,9 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid #eee;
     padding: 45px 0;
     margin-top: 50px
+}
+.comments-area .children{
+    padding-left: 60px;
 }
 @media (max-width:414px) {
     .comments-area {
@@ -2457,7 +2468,6 @@ button.button {
 article, input {
     clear: both;
     padding-top: 10px;
-    display: none
 }
 label {
     font-weight: 700;
