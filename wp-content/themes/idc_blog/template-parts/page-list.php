@@ -8,22 +8,6 @@
  */
 
 ?>
-
-        <!--================ Banner SM Section start =================-->
-  <section class="hero-banner hero-banner-sm text-center">
-    <div class="container">
-      <h1><?php the_title(); ?></h1>
-      <nav aria-label="breadcrumb" class="banner-breadcrumb">
-        <?php
-          if ( function_exists('yoast_breadcrumb') ) {
-          yoast_breadcrumb( '<div class="breadcrumb">','</div>' );
-          }
-        ?>
-      </nav>
-    </div>
-  </section>
-  <!--================ Banner SM Section end =================-->
-  
     <!--================Blog Area =================-->
     <section class="blog_area section-margin">
       <div class="container">
