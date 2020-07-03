@@ -1633,6 +1633,11 @@ h1, h2, h3, h4, h5, h6 {
 .blog_item_img {
     position: relative
 }
+.blog_item_img img{
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
 .blog_item_img .blog_item_date {
     position: absolute;
     bottom: -10px;
@@ -1640,7 +1645,8 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     color: #fff;
     padding: 8px 15px;
-    border-radius: 5px
+    border-radius: 5px;
+    text-align: center
 }
 @media (min-width:768px) {
     .blog_item_img .blog_item_date {
@@ -1875,6 +1881,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 7px;
     font-size: 14px;
     transition: all .2s linear
+}
+.single-post .feature-img{
+    text-align: center;
+}
+.single-post .feature-img img{
+    max-height: 400px;
+    object-fit: cover;
 }
 .single-post-area .social-links li a:hover {
     color: #044b82
