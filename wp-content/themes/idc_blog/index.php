@@ -13,5 +13,16 @@
  */
 
 get_header();
+?>
+
+        <!--================ Banner SM Section start =================-->
+  <section class="hero-banner hero-banner-sm text-center">
+    <div class="container">
+      	<h1><?php echo get_bloginfo('description'); ?></h1>
+    </div>
+  </section>
+  <!--================ Banner SM Section end =================-->
+
+<?php
 get_template_part('template-parts/page-list');
 get_footer();
