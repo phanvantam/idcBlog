@@ -16,50 +16,51 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>About Us</h4>
-          <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing days open</p>
-          <a class="navbar-brand logo_h d-none d-xl-block" href="index.html"><img src="img/logo.png" alt=""></a>
+					<?php 
+						dynamic_sidebar( 'sidebar-1' ); 
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+			            $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					?>
+					<a class="navbar-brand logo_h d-none d-xl-block" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<img src="<?php echo $image[0];?>" alt="">
+					</a>
 				</div>
-				<div class="col-xl-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Contact Info</h4>
-					<ul>
-						<li>Address: Your address goes here, your demo address.</li>
-						<li><a href="tel:+88044338899">Phone: +880 44338899</a></li>
-						<li><a href="mailto:info@colorlib.com">Email: info@colorlib.com</a></li>
-					</ul>
-				</div>
+				<?php dynamic_sidebar( 'sidebar-2' ); ?>
 				<div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Important Link</h4>
-					<ul>
-						<li><a href="#">WHMCS-bridge</a></li>
-						<li><a href="#">Search Domain</a></li>
-						<li><a href="#">My Account</a></li>
-						<li><a href="#">Shopping Cart</a></li>
-						<li><a href="#">Our Shop</a></li>
-					</ul>
+					<h4><?php echo wp_get_nav_menu_name('menu-2'); ?></h4>
+					<?php
+		              wp_nav_menu( array(
+		               'theme_location' => 'menu-2',
+		               'container' => '',
+		               'container_class' => '',
+		               'menu_class' => '',
+		               'link_class'        => '',
+		               'list_item_class'   => ''
+		              ) );
+		             ?>
 				</div>
 				<div class="offset-xl-1 col-xl-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
-					<h4>Newsletter</h4>
-          <p>Heaven fruitful doesn't over lesser in days. Appear creeping seasons deve behold bearing days open</p>
-          
-          <div class="form-wrap" id="mc_embed_signup">
-            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-            method="get">
-              <div class="input-group">
-                <input type="email" class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
-                <div class="input-group-append">
-                  <button class="btn click-btn" type="submit">
-                    <i class="ti-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-              <div style="position: absolute; left: -5000px;">
-								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-							</div>
+					
+		          <?php dynamic_sidebar( 'sidebar-3' ); ?>
+		          
+		          <div class="form-wrap" id="mc_embed_signup">
+		            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+		            method="get">
+		              <div class="input-group">
+		                <input type="email" class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '">
+		                <div class="input-group-append">
+		                  <button class="btn click-btn" type="submit">
+		                    <i class="ti-arrow-right"></i>
+		                  </button>
+		                </div>
+		              </div>
+		              <div style="position: absolute; left: -5000px;">
+										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+									</div>
 
-							<div class="info"></div>
-            </form>
-          </div>
+									<div class="info"></div>
+		            </form>
+		          </div>
           
 				</div>
 			</div>
