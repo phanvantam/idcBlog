@@ -57,7 +57,7 @@ if (have_comments()):
                <input class="form-control" value="' . esc_attr($commenter['comment_author_email']) . '" name="email" id="email" type="email" placeholder="' . __('Email') . ($req ? ' *' : '') . '">
             </div>
          </div>',
-         'cookies' => '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="hidden" value="yes"' . $consent . ' />',
+         'cookies' => '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="hidden" value="yes" />',
 	);
 	$args = array(
 	    'id_form'              => 'commentForm',
