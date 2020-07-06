@@ -38,24 +38,20 @@
 
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="feature.html">Features</a></li> 
-              <li class="nav-item"><a class="nav-link" href="service.html">Service</a>
-              <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a>
-              <li class="nav-item submenu dropdown active">
+              <li class="nav-item"><a class="nav-link" href="https://idconline.vn">Trang chủ</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/">Tin tức</a></li> 
+              <li class="nav-item"><a class="nav-link" href="/question/">Hỏi đáp ?</a>
+              <!-- <li class="nav-item submenu dropdown active">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                   aria-expanded="false">Pages</a>
                 <ul class="dropdown-menu">
                   <li class="nav-item"><a class="nav-link" href="blog.html">Single Blog</a>                 
                   <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a>                 
                 </ul>
-							</li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+							</li> -->
             </ul>
-
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-              <a class="button button-link mr-4" href="#"><span class="align-middle"><i class="ti-comments"></i></span> Live Chat</a>
-              <a class="button button-outline button-small" href="#">Login</a>
+              <a class="button button-outline button-small" href="/wp-admin">Đăng nhập</a>
             </div>
           </div> 
         </div>
