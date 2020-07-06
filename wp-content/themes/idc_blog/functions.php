@@ -135,7 +135,7 @@ function idc_blog_widgets_init() {
 			'after_widget'  => '',
 			'before_title'  => '<h4>',
 			'after_title'   => '</h4>',
-		),
+		)
 	);
 	register_sidebar(
 		array(
@@ -146,7 +146,7 @@ function idc_blog_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4>',
 			'after_title'   => '</h4>',
-		),
+		)
 	);
 	register_sidebar(
 		array(
@@ -157,7 +157,7 @@ function idc_blog_widgets_init() {
 			'after_widget'  => '',
 			'before_title'  => '<h4>',
 			'after_title'   => '</h4>',
-		),
+		)
 	);
 }
 add_action( 'widgets_init', 'idc_blog_widgets_init' );
