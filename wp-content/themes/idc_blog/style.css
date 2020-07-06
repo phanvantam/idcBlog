@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header_area {
     position: absolute;
-    top: 40px;
+    top: 12px;
     left: 0;
     width: 100%;
     z-index: 99;
@@ -220,7 +220,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0;
     width: 100%;
     padding-top: 0;
-    padding-bottom: 0
+    padding-bottom: 0;
+    padding-bottom: 6px
 }
 .header_area .navbar .nav-right {
     min-width: 200px

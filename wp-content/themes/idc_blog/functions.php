@@ -51,6 +51,7 @@ if ( ! function_exists( 'idc_blog_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'idc_blog' ),
+				'menu-2' => esc_html__( 'Footer', 'idc_blog' ),
 			)
 		);
 
@@ -120,6 +121,49 @@ function idc_blog_content_width() {
 add_action( 'after_setup_theme', 'idc_blog_content_width', 0 );
 
 /**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function idc_blog_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'About Us', 'idc_blog' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'idc_blog' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h4>',
+			'after_title'   => '</h4>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Contact Info', 'idc_blog' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here.', 'idc_blog' ),
+			'before_widget' => '<div class="col-xl-3 col-sm-6 mb-4 mb-xl-0 single-footer-widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4>',
+			'after_title'   => '</h4>',
+		),
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Newsletter', 'idc_blog' ),
+			'id'            => 'sidebar-3',
+			'description'   => esc_html__( 'Add widgets here.', 'idc_blog' ),
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h4>',
+			'after_title'   => '</h4>',
+		),
+	);
+}
+add_action( 'widgets_init', 'idc_blog_widgets_init' );
+
+
+/**
  * Enqueue scripts and styles.
  */
 function idc_blog_scripts() {
@@ -181,3 +225,23 @@ function twentyten_comment( $comment, $args, $depth ) {
    </div>
 
 <?php } endif; ?>
+
+<?php 
+
+/*Adding class to menu item - li tag */
+function add_menu_list_item_class($classes, $item, $args) {
+  if($args->list_item_class) {
+      $classes[] = $args->list_item_class;
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
+ 
+/*Adding class to link menu item - a tag */
+function add_menu_link_class( $atts, $item, $args ) {
+  if($args->link_class) {
+    $atts['class'] = $args->link_class;
+  }
+  return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );

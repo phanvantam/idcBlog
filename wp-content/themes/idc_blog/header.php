@@ -13,12 +13,12 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<?php wp_enqueue_style ('bootstrap', get_template_directory_uri().'/css/bootstrap.min.css'); ?>
-	<?php wp_enqueue_style ('themify-icons', get_template_directory_uri().'/css/themify-icons.css'); ?>
-	<?php wp_head(); ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <?php wp_enqueue_style ('bootstrap', get_template_directory_uri().'/css/bootstrap.min.css'); ?>
+  <?php wp_enqueue_style ('themify-icons', get_template_directory_uri().'/css/themify-icons.css'); ?>
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,7 +29,13 @@
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+          <?php 
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+          ?>  
+          <a class="navbar-brand logo_h" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <img src="<?php echo $image[0];?>" alt="">
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -37,19 +43,16 @@
           </button>
 
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item"><a class="nav-link" href="https://idconline.vn">Trang chủ</a></li> 
-              <li class="nav-item"><a class="nav-link" href="http://123.31.20.103:9001/?">Tin tức</a></li> 
-              <li class="nav-item"><a class="nav-link" href="/question/">Hỏi đáp ?</a>
-              <!-- <li class="nav-item submenu dropdown active">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Single Blog</a>                 
-                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a>                 
-                </ul>
-							</li> -->
-            </ul>
+            <?php
+              wp_nav_menu( array(
+               'theme_location' => 'menu-1',
+               'container' => '',
+               'container_class' => '',
+               'menu_class' => 'nav navbar-nav menu_nav justify-content-end',
+               'link_class'        => 'nav-link',
+               'list_item_class'   => 'nav-item'
+              ) );
+             ?>
             <div class="nav-right text-center text-lg-right py-4 py-lg-0">
               <a class="button button-outline button-small" href="/wp-admin">Đăng nhập</a>
             </div>
