@@ -18,6 +18,9 @@
  * @package WordPress
  */
 
+define('WP_HOME','http://localhost');
+define('WP_SITEURL','http://localhost');
+
 // ** Thiết lập MySQL - Bạn có thể lấy các thông tin này từ host/server ** //
 /** Tên database MySQL */
 define('DB_NAME', 'ten_database');
