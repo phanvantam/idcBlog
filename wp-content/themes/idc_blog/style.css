@@ -3678,7 +3678,8 @@ a.order-vps {
     height: 44px;
     outline: unset;
 }
-.dwqa-container .dwqa-content-edit-form input[type=text]{
+.dwqa-container .dwqa-content-edit-form input[type=text],
+.dwqa-container .dwqa-content-edit-form input[type=email]{
     border: 1px solid rgb(240, 233, 255);
     border-radius: 5px;
     height: 44px;
@@ -3703,7 +3704,8 @@ a.order-vps {
 .dwqa-container .dwqa-single-question input[name=question_title]{
     padding-top: 0;
 }
-.dwqa-container input[type=text]{
+.dwqa-container input[type=text],
+.dwqa-container input[type=email]{
     border: 1px solid rgb(240, 233, 255);
     border-radius: 5px;
     height: 44px;
@@ -3713,12 +3715,13 @@ a.order-vps {
 }
 .dwqa-container .comment-form label,
 .dwqa-container #dwqa-answer-form label{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
-    color: #3e3e3e;
+    color: #6c757d;
     background: unset;
     padding: 0;
     width: unset;
+    margin-bottom: 0;
 }
 .dwqa-container #dwqa-answer-form>p{
     width: 48%;
