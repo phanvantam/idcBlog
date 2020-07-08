@@ -168,9 +168,9 @@ add_action( 'widgets_init', 'idc_blog_widgets_init' );
  */
 function idc_blog_scripts() {
 	wp_enqueue_style( 'idc_blog-style', get_stylesheet_uri(), array(), _S_VERSION );
-	// wp_enqueue_script('idc_blog-jquery', get_template_directory_uri().'/js/jquery-3.2.1.min.js', array(), _S_VERSION );
-	// wp_enqueue_script('idc_blog-bootstrap', get_template_directory_uri().'/js/bootstrap.bundle.min.js', array(), _S_VERSION );
-	// wp_enqueue_script('jquery.ajaxchimp', get_template_directory_uri().'/js/jquery.ajaxchimp.min.js', array(), _S_VERSION );
+	wp_enqueue_script('idc_blog-jquery', get_template_directory_uri().'/js/jquery-3.2.1.min.js', array(), _S_VERSION );
+	wp_enqueue_script('idc_blog-bootstrap', get_template_directory_uri().'/js/bootstrap.bundle.min.js', array(), _S_VERSION );
+	wp_enqueue_script('jquery.ajaxchimp', get_template_directory_uri().'/js/jquery.ajaxchimp.min.js', array(), _S_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'idc_blog_scripts' );
 
