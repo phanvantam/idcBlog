@@ -273,3 +273,6 @@ if ( !function_exists( 'get_login_url' ) ) {
 
 // Lỗi reply cmt on seo
 add_filter( 'wpseo_remove_reply_to_com', '__return_false' );
+
+// Hide admin bar
+add_filter ('show_admin_bar', '__return_false');
