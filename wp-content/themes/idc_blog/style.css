@@ -61,7 +61,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Document
 	 ========================================================================== */
-	 
+	
+.storefront-primary-navigation {
+  display: none;
+}
+ 
 body {
     color: #222;
     font-family: Roboto-Regular, Roboto, sans-serif;
