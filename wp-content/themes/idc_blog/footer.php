@@ -79,7 +79,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</footer>
   <!-- ================ End footer Area ================= -->
 
-  <?php //wp_enqueue_script('main', get_template_directory_uri().'/js/main.js'); ?>
+  <?php wp_enqueue_script('main', get_template_directory_uri().'/js/main.js'); ?>
   
 <?php wp_footer(); ?>
 
