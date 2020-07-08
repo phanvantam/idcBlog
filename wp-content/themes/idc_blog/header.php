@@ -30,26 +30,26 @@
   <section class="top_header">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <ul class="nav nav-pills pull-left">
                         <li><a href="tel:+842473006452"><i class="icon-call-out"></i> 024-7300-6452</a></li>
                         <li class="login_none"><a href="mailto:info@idconline.vn"><i class="ti-email"></i> info@ idconline.vn</a></li>
                     </ul>
                 </div>
 
-                <div class="col-6">
+                <div class="col-md-6">
                     <ul class="nav nav-pills pull-right">
                         <li class="chat_login_none"><a href="javascript:void(Tawk_API.toggle())"><i class="ti-comments"></i> Live Chat</a></li>
                         <?php if($is_login): ?>
                         <li class="login_none">
-                          <a href="<?php echo get_logout_url(); ?>" target="_tblank"><i class="ti-new-window"></i> Đăng xuất</a>
+                          <a href="<?php echo get_logout_url(); ?>"><i class="ti-new-window"></i> Đăng xuất</a>
                         </li>
                         <li class="login_none">
                           <a href="/wp-admin"><i class="ti-user"></i> <?php printf( __( '%s', 'textdomain' ), esc_html( $current_user->display_name ) ); ?></a>
                         </li>
                         <?php else: ?>
                         <li class="login_none">
-                          <a href="<?php echo get_register_url(); ?>" target="_tblank"><i class="ti-new-window"></i> Đăng ký</a>
+                          <a href="<?php echo get_register_url(); ?>"><i class="ti-new-window"></i> Đăng ký</a>
                         </li>
                         <?php endif; ?>
                     </ul>

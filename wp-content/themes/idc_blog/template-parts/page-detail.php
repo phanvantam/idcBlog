@@ -65,7 +65,7 @@
                               if(!empty($previous_post)):
                             ?>
                                 <div class="thumb">
-                                    <a href="#">
+                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>">
                                         <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($previous_post, 'thumbnail'); ?>" alt="">
                                     </a>
                                 </div>
@@ -98,7 +98,7 @@
                                     </a>
                                 </div>
                                 <div class="thumb">
-                                    <a href="#">
+                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>">
                                         <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($next_post, 'thumbnail'); ?>" alt="">
                                     </a>
                                 </div>

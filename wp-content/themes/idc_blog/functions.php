@@ -196,7 +196,7 @@ if ( ! function_exists( 'twentyten_comment' ) ) :
 
 function twentyten_comment( $comment, $args, $depth ) {
     ?>
-    <div class="comment-list <?php comment_class(); ?>" id="li-comment-<?php comment_ID() ?>">
+    <div <?php comment_class('comment-list'); ?> id="li-comment-<?php comment_ID() ?>">
       <div class="single-comment justify-content-between d-flex">
          <div class="user justify-content-between d-flex">
             <div class="thumb">
