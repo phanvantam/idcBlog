@@ -168,9 +168,9 @@ add_action( 'widgets_init', 'idc_blog_widgets_init' );
  */
 function idc_blog_scripts() {
 	wp_enqueue_style( 'idc_blog-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_script('idc_blog-jquery', get_template_directory_uri().'/js/jquery-3.2.1.min.js', array(), _S_VERSION );
-	wp_enqueue_script('idc_blog-bootstrap', get_template_directory_uri().'/js/bootstrap.bundle.min.js', array(), _S_VERSION );
-	wp_enqueue_script('jquery.ajaxchimp', get_template_directory_uri().'/js/jquery.ajaxchimp.min.js', array(), _S_VERSION );
+	// wp_enqueue_script('idc_blog-jquery', get_template_directory_uri().'/js/jquery-3.2.1.min.js', array(), _S_VERSION );
+	// wp_enqueue_script('idc_blog-bootstrap', get_template_directory_uri().'/js/bootstrap.bundle.min.js', array(), _S_VERSION );
+	// wp_enqueue_script('jquery.ajaxchimp', get_template_directory_uri().'/js/jquery.ajaxchimp.min.js', array(), _S_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'idc_blog_scripts' );
 
@@ -216,7 +216,8 @@ function twentyten_comment( $comment, $args, $depth ) {
                      <p class="date"><?php printf(/* translators: 1: date and time(s). */ esc_html__('%1$s lúc %2$s' , '5balloons_theme'), get_comment_date(),  get_comment_time()) ?></p>
                   </div>
                   <div class="reply-btn">
-                  	<a href="#" class="btn-reply text-uppercase"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></a>
+                  	<!-- <a href="#" class="btn-reply text-uppercase"></a> -->
+                  	<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
                   </div>
                </div>
             </div>
@@ -245,3 +246,30 @@ function add_menu_link_class( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'add_menu_link_class', 1, 3 );
+
+if ( !function_exists( 'get_register_url' ) ) {
+	function get_register_url($permalink = '')
+	{
+		$permalink = empty($permalink) ? get_permalink() : $permalink;
+	    return site_url('/wp-login.php?action=register&redirect_to=' . get_permalink());
+	}
+}
+
+if ( !function_exists( 'get_logout_url' ) ) {
+	function get_logout_url($permalink = '')
+	{
+		$permalink = empty($permalink) ? get_permalink() : $permalink;
+	    return site_url('/wp-login.php?action=logout&redirect_to=' . get_permalink());
+	}
+}
+
+if ( !function_exists( 'get_login_url' ) ) {
+	function get_login_url($permalink = '')
+	{
+		$permalink = empty($permalink) ? get_permalink() : $permalink;
+	    return site_url('/wp-login.php?redirect_to=' . get_permalink());
+	}
+}
+
+// Lỗi reply cmt on seo
+add_filter( 'wpseo_remove_reply_to_com', '__return_false' );

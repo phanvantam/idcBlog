@@ -23,6 +23,40 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php
+  $current_user = wp_get_current_user();
+  $is_login = $current_user->ID > 0;
+?>
+  <section class="top_header">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <ul class="nav nav-pills pull-left">
+                        <li><a href="tel:+842473006452"><i class="icon-call-out"></i> 024-7300-6452</a></li>
+                        <li class="login_none"><a href="mailto:info@idconline.vn"><i class="ti-email"></i> info@ idconline.vn</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6">
+                    <ul class="nav nav-pills pull-right">
+                        <li class="chat_login_none"><a href="javascript:void(Tawk_API.toggle())"><i class="ti-comments"></i> Live Chat</a></li>
+                        <?php if($is_login): ?>
+                        <li class="login_none">
+                          <a href="<?php echo get_logout_url(); ?>" target="_tblank"><i class="ti-new-window"></i> Đăng xuất</a>
+                        </li>
+                        <li class="login_none">
+                          <a href="/wp-admin"><i class="ti-user"></i> <?php printf( __( '%s', 'textdomain' ), esc_html( $current_user->display_name ) ); ?></a>
+                        </li>
+                        <?php else: ?>
+                        <li class="login_none">
+                          <a href="<?php echo get_register_url(); ?>" target="_tblank"><i class="ti-new-window"></i> Đăng ký</a>
+                        </li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!--================ Header Menu Area start =================-->
   <header class="header_area">
@@ -53,9 +87,13 @@
                'list_item_class'   => 'nav-item'
               ) );
              ?>
-            <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-              <a class="button button-outline button-small" href="/wp-admin">Đăng nhập</a>
-            </div>
+              <?php
+                if(!$is_login):
+              ?>
+              <div class="nav-right text-center text-lg-right py-4 py-lg-0">
+                <a class="button button-outline button-small" href="<?php echo get_login_url(); ?>">Đăng nhập</a>
+              </div>
+              <?php endif; ?>
           </div> 
         </div>
       </nav>

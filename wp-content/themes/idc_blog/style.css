@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header_area {
     position: absolute;
-    top: 12px;
+    top: 45px;
     left: 0;
     width: 100%;
     z-index: 99;
@@ -3611,6 +3611,7 @@ a.order-vps {
     outline: unset;
     border: unset;
     margin: auto;
+    min-width: 120px;
 }
 .dwqa-container .dwqa-single-question .dwqa-answer-form .dwqa-select{
     padding: 5px 10px;
@@ -3675,6 +3676,46 @@ a.order-vps {
 }
 .dwqa-container .dwqa-single-question input[name=question_title]{
     padding-top: 0;
+}
+.dwqa-container input{
+    border: 1px solid rgb(240, 233, 255);
+    border-radius: 5px;
+    height: 44px;
+    padding-left: 18px;
+    font-size: 13px;
+    outline: unset;
+}
+.dwqa-container .comment-form label,
+.dwqa-container #dwqa-answer-form label{
+    font-size: 16px;
+    font-weight: 400;
+    color: #3e3e3e;
+    background: unset;
+    padding: 0;
+    width: unset;
+}
+.dwqa-container #dwqa-answer-form>p{
+    width: 48%;
+    display: inline-block;
+}
+.dwqa-container #dwqa-answer-form>p:nth-child(2){
+    float: left;
+}
+.dwqa-container .comment-form .comment-form-email,
+.dwqa-container .comment-form .comment-form-name{
+    width: 48%;
+    display: inline-block;
+}
+.dwqa-container .comment-form input[name=email],
+.dwqa-container .comment-form input[name=name],
+.dwqa-container #dwqa-answer-form input[name=user-email],
+.dwqa-container #dwqa-answer-form input[name=user-name]{
+    padding-top: 0;
+    display: block;
+    width: 100%;
+}
+.dwqa-container .comment-form .comment-form-name{
+    float: right;
 }
 @media ( max-width: 480px ) {
     .dwqa-pick-best-answer{
