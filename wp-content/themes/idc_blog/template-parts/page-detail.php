@@ -31,7 +31,7 @@
               <div class="col-lg-8 posts-list">
                   <div class="single-post">
                         <div class="feature-img">
-                          <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post); ?>" alt="">
+                          <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post); ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true); ?>">
                         </div>
                       <div class="blog_details">
                           <h2><?php the_title(); ?></h2>
@@ -66,11 +66,11 @@
                             ?>
                                 <div class="thumb">
                                     <a href="<?php echo esc_url(get_permalink($previous_post)); ?>">
-                                        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($previous_post, 'thumbnail'); ?>" alt="">
+                                        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($previous_post, 'thumbnail'); ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id( $previous_post->ID ), '_wp_attachment_image_alt', true); ?>">
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#">
+                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>">
                                         <span class="ti-arrow-left text-white"></span>
                                     </a>
                                 </div>
@@ -93,13 +93,13 @@
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="#">
+                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>">
                                         <span class="ti-arrow-right text-white"></span>
                                     </a>
                                 </div>
                                 <div class="thumb">
                                     <a href="<?php echo esc_url(get_permalink($next_post)); ?>">
-                                        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($next_post, 'thumbnail'); ?>" alt="">
+                                        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($next_post, 'thumbnail'); ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id( $next_post->ID ), '_wp_attachment_image_alt', true); ?>">
                                     </a>
                                 </div>
                               <?php endif; ?>
