@@ -30,9 +30,7 @@
           <div class="row">
               <div class="col-lg-8 posts-list">
                   <div class="single-post">
-                        <div class="feature-img">
-                          <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post); ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true); ?>">
-                        </div>
+                        
                       <div class="blog_details">
                           <h2><?php the_title(); ?></h2>
                               <ul class="blog-info-link mt-3 mb-4">
@@ -65,17 +63,20 @@
                               if(!empty($previous_post)):
                             ?>
                                 <div class="thumb">
-                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>"
+                                      title="<?php echo $previous_post->post_title; ?>">
                                         <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($previous_post, 'thumbnail'); ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id( $previous_post->ID ), '_wp_attachment_image_alt', true); ?>">
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>"
+                                      title="<?php echo $previous_post->post_title; ?>">
                                         <span class="ti-arrow-left text-white"></span>
                                     </a>
                                 </div>
                                 <div class="detials">
-                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($previous_post)); ?>"
+                                      title="<?php echo $previous_post->post_title; ?>">
                                         <h4><?php echo $previous_post->post_title; ?></h4>
                                     </a>
                                 </div>
@@ -88,17 +89,17 @@
                               if(!empty($next_post)):
                             ?>
                                 <div class="detials">
-                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>" title="<?php echo $next_post->post_title; ?>">
                                         <h4><?php echo $next_post->post_title; ?></h4>
                                     </a>
                                 </div>
                                 <div class="arrow">
-                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>" title="<?php echo $next_post->post_title; ?>">
                                         <span class="ti-arrow-right text-white"></span>
                                     </a>
                                 </div>
                                 <div class="thumb">
-                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>">
+                                    <a href="<?php echo esc_url(get_permalink($next_post)); ?>" title="<?php echo $next_post->post_title; ?>">
                                         <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($next_post, 'thumbnail'); ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id( $next_post->ID ), '_wp_attachment_image_alt', true); ?>">
                                     </a>
                                 </div>

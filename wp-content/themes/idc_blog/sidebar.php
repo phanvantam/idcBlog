@@ -50,7 +50,7 @@ $recent_posts = wp_get_recent_posts(array(
       </aside>
       <?php if(is_array($categories) && !empty($categories)): ?>
       <aside class="single_sidebar_widget post_category_widget">
-         <h4 class="widget_title">Category</h4>
+         <h4 class="widget_title">Danh mục nổi bật</h4>
          <ul class="list cat-list">
             <?php foreach($categories as $item): ?>
             <li>
@@ -65,12 +65,12 @@ $recent_posts = wp_get_recent_posts(array(
       <?php endif; ?>
       <?php if(is_array($recent_posts) && !empty($recent_posts)): ?>
       <aside class="single_sidebar_widget popular_post_widget">
-         <h3 class="widget_title">Recent Post</h3>
+         <h3 class="widget_title">Bài viết gần đây</h3>
           <?php foreach($recent_posts as $item): ?>
           <div class="media post_item">
-            <a href="<?php echo get_permalink($item['ID']) ?>"><?php echo get_the_post_thumbnail($item['ID'], 'thumbnail'); ?></a>
+            <a href="<?php echo get_permalink($item['ID']) ?>" title="<?php echo $item["post_title"]; ?>"><?php echo get_the_post_thumbnail($item['ID'], 'thumbnail'); ?></a>
             <div class="media-body">
-               <a href="<?php echo get_permalink($item['ID']) ?>">
+               <a href="<?php echo get_permalink($item['ID']) ?>" title="<?php echo $item["post_title"]; ?>">
                   <h3><?php echo $item["post_title"]; ?></h3>
                </a>
                <p><?php echo $item["post_date"]; ?></p>
@@ -80,7 +80,7 @@ $recent_posts = wp_get_recent_posts(array(
       </aside>
       <?php endif; ?>
       <aside class="single_sidebar_widget tag_cloud_widget">
-         <h4 class="widget_title">Tag Clouds</h4>
+         <h4 class="widget_title">Từ khóa nổi bật</h4>
          <?php the_tags( '<ul class="list"><li>', '</li><li>', '</li></ul>' ); ?>
       </aside>
    </div>
