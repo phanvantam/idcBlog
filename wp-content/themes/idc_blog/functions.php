@@ -285,3 +285,27 @@ add_filter('wpseo_remove_reply_to_com', '__return_false');
 
 // Hide admin bar
 add_filter('show_admin_bar', '__return_false');
+
+/*Lấy random post*/
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'api', '/posts', array(
+        'methods'   =>  'GET',
+        'callback'  =>  'get_random',
+    ) );
+});
+function get_random() {
+    $result = get_posts( array( 'orderby' => 'rand', 'posts_per_page' => 6) );
+    $respon = [];
+    foreach ($result as $item) {
+      $respon[] = [
+        "title"=> $item->post_title,
+        "excerpt"=> $item->post_excerpt,
+        "link"=> esc_url(get_permalink($item)),
+        "img"=> [
+          "url"=> get_the_post_thumbnail_url($item, 'medium'),
+          "alt"=> get_post_meta( get_post_thumbnail_id( $item->ID ), '_wp_attachment_image_alt', true)
+        ]
+      ];
+    }
+    return $respon;
+}
