@@ -58,15 +58,16 @@ if(is_mobile()):
           <?php endif; ?>
        </div>
     </div>
-    <? endif; ?>
+    <?php endif; ?>
     <!--================Blog Area =================-->
     <section class="blog_area section-margin">
       <div class="container">
           <div class="row">
               <div class="col-lg-8 mb-5 mb-lg-0">
                   <div class="blog_left_sidebar">
-                  
-          <?php
+                    <?php if ( is_home() && ! is_front_page() ) : ?>
+
+          <?php endif;
 
           /* Start the Loop */
           while ( have_posts() ) :
