@@ -7,7 +7,58 @@
  * @package idc_blog
  */
 
+if(is_mobile()) {
+  $args = array(
+      'type'                     => 'post',
+      'child_of'                 => 0,
+      'parent'                   => '',
+      'orderby'                  => 'name',
+      'order'                    => 'ASC',
+      'hide_empty'               => false,
+      'hierarchical'             => 1,
+      'exclude'                  => '',
+      'include'                  => '',
+      'number'                   => '',
+      'taxonomy'                 => 'category',
+      'pad_counts'               => false
+  );
+  $categories = get_categories($args);
+}
+if(is_mobile()):
 ?>
+    <div>
+       <div class="blog_right_sidebar">
+          <aside class="single_sidebar_widget search_widget">
+             <form action="/">
+                <div class="form-group">
+                   <div class="input-group mb-3">
+                      <input type="text" class="form-control" name="s" value="<?php echo get_search_query(); ?>" placeholder="Từ khóa tìm kiếm">
+                      <div class="input-group-append">
+                         <button class="btn" type="button"><i class="ti-search"></i></button>
+                      </div>
+                   </div>
+                </div>
+                <button class="button rounded-0 w-100" type="submit">Tìm kiếm</button>
+             </form>
+          </aside>
+          <?php if(is_array($categories) && !empty($categories)): ?>
+          <aside class="single_sidebar_widget post_category_widget">
+             <h4 class="widget_title">Danh mục nổi bật</h4>
+             <ul class="list cat-list">
+                <?php foreach($categories as $item): ?>
+                <li>
+                   <a href="<?php echo get_category_link($item); ?>" class="d-flex">
+                      <p><?php echo $item->name; ?></p>
+                      <p> (<?php echo wp_get_cat_postcount($item->term_id); ?>)</p>
+                   </a>
+                </li>
+                <?php endforeach; ?>
+             </ul>
+          </aside>
+          <?php endif; ?>
+       </div>
+    </div>
+    <? endif; ?>
     <!--================Blog Area =================-->
     <section class="blog_area section-margin">
       <div class="container">

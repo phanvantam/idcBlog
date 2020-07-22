@@ -11,9 +11,11 @@
 
 <article class="blog_item">
     <div class="blog_item_img">
-      <img class="card-img rounded-0" 
+      <a href="<?php echo esc_url(get_permalink()); ?>" title="<?php echo the_title(); ?>">
+        <img class="card-img rounded-0" 
         src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail')[0]; ?>" 
         alt="<?php echo get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true); ?>">
+      </a>
       <a href="<?php echo esc_url(get_permalink()); ?>" class="blog_item_date" title="<?php echo the_title(); ?>">
         <h3><?php echo get_the_date('m'); ?></h3>
         <p><?php echo get_the_date('Y'); ?></p>

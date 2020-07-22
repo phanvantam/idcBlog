@@ -11,21 +11,23 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 
-$args = array(
-    'type'                     => 'post',
-    'child_of'                 => 0,
-    'parent'                   => '',
-    'orderby'                  => 'name',
-    'order'                    => 'ASC',
-    'hide_empty'               => false,
-    'hierarchical'             => 1,
-    'exclude'                  => '',
-    'include'                  => '',
-    'number'                   => '',
-    'taxonomy'                 => 'category',
-    'pad_counts'               => false
-);
-$categories = get_categories($args);
+if(!is_mobile()) {
+  $args = array(
+      'type'                     => 'post',
+      'child_of'                 => 0,
+      'parent'                   => '',
+      'orderby'                  => 'name',
+      'order'                    => 'ASC',
+      'hide_empty'               => false,
+      'hierarchical'             => 1,
+      'exclude'                  => '',
+      'include'                  => '',
+      'number'                   => '',
+      'taxonomy'                 => 'category',
+      'pad_counts'               => false
+  );
+  $categories = get_categories($args);
+}
 
 $recent_posts = wp_get_recent_posts(array(
         'numberposts' => 4, // Number of recent posts thumbnails to display
@@ -35,6 +37,7 @@ $recent_posts = wp_get_recent_posts(array(
 
 <div class="col-lg-4">
    <div class="blog_right_sidebar">
+      <? if(!is_mobile()): ?>
       <aside class="single_sidebar_widget search_widget">
          <form action="/">
             <div class="form-group">
@@ -62,7 +65,11 @@ $recent_posts = wp_get_recent_posts(array(
             <?php endforeach; ?>
          </ul>
       </aside>
-      <?php endif; ?>
+      <?php 
+        endif;
+        endif; 
+      ?>
+
       <?php if(is_array($recent_posts) && !empty($recent_posts)): ?>
       <aside class="single_sidebar_widget popular_post_widget">
          <h3 class="widget_title">Bài viết gần đây</h3>
