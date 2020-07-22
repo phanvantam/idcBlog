@@ -37,7 +37,7 @@ $recent_posts = wp_get_recent_posts(array(
 
 <div class="col-lg-4">
    <div class="blog_right_sidebar">
-      <? if(!is_mobile()): ?>
+      <?php if(!is_mobile()): ?>
       <aside class="single_sidebar_widget search_widget">
          <form action="/">
             <div class="form-group">
