@@ -65,9 +65,8 @@ if(is_mobile()):
           <div class="row">
               <div class="col-lg-8 mb-5 mb-lg-0">
                   <div class="blog_left_sidebar">
-                    <?php if ( is_home() && ! is_front_page() ) : ?>
-
-          <?php endif;
+                  
+          <?php
 
           /* Start the Loop */
           while ( have_posts() ) :
