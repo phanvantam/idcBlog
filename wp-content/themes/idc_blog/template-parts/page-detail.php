@@ -10,17 +10,8 @@
 ?>
 
     <!--================ Banner SM Section start =================-->
-  <section class="hero-banner hero-banner-sm text-center">
-    <div class="container">
-      <h1><?php the_title(); ?></h1>
-      <nav aria-label="breadcrumb" class="banner-breadcrumb">
-        <?php
-          if ( function_exists('yoast_breadcrumb') ) {
-          yoast_breadcrumb( '<div class="breadcrumb">','</div>' );
-          }
-        ?>
-      </nav>
-    </div>
+  <section class="custom-banner">
+    <?php dynamic_sidebar( 'sidebar-4' ); ?>
   </section>
   <!--================ Banner SM Section end =================-->
 
@@ -32,7 +23,14 @@
                   <div class="single-post">
                         
                       <div class="blog_details">
-                          <h2><?php the_title(); ?></h2>
+                          <h2 class="text-center"><?php the_title(); ?></h2>
+                          <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                            <?php
+                              if ( function_exists('yoast_breadcrumb') ) {
+                              yoast_breadcrumb( '<div class="breadcrumb">','</div>' );
+                              }
+                            ?>
+                          </nav>
                               <ul class="blog-info-link mt-3 mb-4">
                     <li><a><i class="ti-calendar"></i> <?php echo get_the_date('d/m/Y H:s'); ?></a></li>
                                 <li><a href="#commentsArea"><i class="ti-comments"></i> <?php echo get_comments_number($post); ?> Bình luận</a></li>

@@ -40,7 +40,7 @@ $(function() {
             loop: true,
             margin: 30,
             // items: 5,
-            nav: false,
+            nav: true,
             dots: true,
             responsiveClass: true,
             slideSpeed: 300,
@@ -106,7 +106,29 @@ $(function() {
     }
 
 
-
+    if ($('.posts').length) {
+        $('.posts .owl-carousel').owlCarousel({
+            // loop: true,
+            margin: 30,
+            // items: 5,
+            nav: false,
+            dots: true,
+            responsiveClass: true,
+            slideSpeed: 300,
+            paginationSpeed: 500,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                800: {
+                    items: 2
+                },
+                1200: {
+                    items: 3
+                }
+            }
+        })
+    }
   
 });
 

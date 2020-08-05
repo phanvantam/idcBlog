@@ -22,10 +22,6 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php
-  $current_user = wp_get_current_user();
-  $is_login = $current_user->ID > 0;
-?>
   <section class="top_header">
         <div class="container">
             <div class="row">
@@ -38,20 +34,19 @@
 
                 <div class="col-md-6">
                     <ul class="nav nav-pills pull-right">
-                        <li class="chat_login_none"><a href="javascript:void(Tawk_API.toggle())"><i class="ti-comments"></i> Live Chat</a></li>
-                        <?php if($is_login): ?>
-                        <li class="login_none">
-                          <a href="<?php echo get_logout_url(); ?>"><i class="ti-new-window"></i> Đăng xuất</a>
-                        </li>
-                        <li class="login_none">
-                          <a href="/wp-admin"><i class="ti-user"></i> <?php printf( __( '%s', 'textdomain' ), esc_html( $current_user->display_name ) ); ?></a>
-                        </li>
-                        <?php else: ?>
-                        <li class="login_none">
-                          <a href="<?php echo get_register_url(); ?>"><i class="ti-new-window"></i> Đăng ký</a>
-                        </li>
-                        <?php endif; ?>
-                    </ul>
+                            <li>
+                                <div class="btn-group">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="ti-world"></i> Vietnam</a>
+                                    <ul class="dropdown-menu" style="min-width: 7.2rem; background-color:#444;">
+                                        <li><a href="#England"><small>[Coming soon]</small></a></li>
+                                        <li><a href="#England"><small>English</small></a></li>
+                                        <li><a href="#China"><small>Chinese</small></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="chat_login_none"><a href="javascript:void(Tawk_API.toggle())"><i class="ti-comments"></i> Live Chat</a></li>
+                            <li class="login_none"><a href="https://portal.idconline.vn/idc/register" target="_blank"><i class="ti-new-window"></i> Register</a></li>
+                        </ul>
                 </div>
             </div>
         </div>
@@ -86,13 +81,9 @@
                'list_item_class'   => 'nav-item'
               ) );
              ?>
-              <?php
-                if(!$is_login):
-              ?>
               <div class="nav-right text-center text-lg-right py-4 py-lg-0">
-                <a class="button button-outline button-small" href="<?php echo get_login_url(); ?>">Đăng nhập</a>
+                <a class="button button-outline button-small" href="https://portal.idconline.vn/login">Đăng nhập</a>
               </div>
-              <?php endif; ?>
           </div> 
         </div>
       </nav>

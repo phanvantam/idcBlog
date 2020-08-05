@@ -24,6 +24,15 @@ if(is_mobile()) {
   );
   $categories = get_categories($args);
 }
+?>
+<?php if (!is_home()): ?>
+<!--================ Banner SM Section start =================-->
+  <section class="custom-banner" style="margin-bottom: 40px;">
+    <?php dynamic_sidebar( 'sidebar-4' ); ?>
+  </section>
+  <!--================ Banner SM Section end =================-->
+  <?php endif; ?>
+<?php
 if(is_mobile()):
 ?>
     <div>
@@ -58,31 +67,56 @@ if(is_mobile()):
           <?php endif; ?>
        </div>
     </div>
-    <?php endif; ?>
+<?php endif; ?>
+      
     <!--================Blog Area =================-->
-    <section class="blog_area section-margin">
+    <section class="blog_area">
       <div class="container">
           <div class="row">
               <div class="col-lg-8 mb-5 mb-lg-0">
                   <div class="blog_left_sidebar">
+
+                    <?php if (!is_home()): ?>
+                      <div class="box-title-custom">
+                        <?php if (is_search()): ?>
+                        <h1><?php
+                          /* translators: %s: search query. */
+                          printf( esc_html__( 'Kết quả tìm kiếm của: %s', 'idc_blog' ), '<span>' . get_search_query() . '</span>' );
+                        ?></h1>
+                    <?php elseif(is_tag()): ?>
+                      <h1><?php
+      echo 'Danh sách bài viết cho '. get_the_archive_title(); 
+    ?></h1>
+                    <?php else: ?>
+                    <h1><?php echo single_cat_title(); ?></h1>
+                    <?php endif; ?>
+                    <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                      <?php
+                        if ( function_exists('yoast_breadcrumb') ) {
+                        yoast_breadcrumb( '<div class="breadcrumb">','</div>' );
+                        }
+                      ?>
+                    </nav>
+                  </div>
+                    <?php endif; ?>
                     <?php if ( is_home() && ! is_front_page() ) : ?>
 
-          <?php endif;
+                      <?php endif;
 
-          /* Start the Loop */
-          while ( have_posts() ) :
-            #the_post();
+                      /* Start the Loop */
+                      while ( have_posts() ) :
+                        #the_post();
 
-            /*
-             * Include the Post-Type-specific template for the content.
-             * If you want to override this in a child theme, then include a file
-             * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-             */
-            get_template_part( 'template-parts/item-post', the_post() );
+                        /*
+                         * Include the Post-Type-specific template for the content.
+                         * If you want to override this in a child theme, then include a file
+                         * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                         */
+                        get_template_part( 'template-parts/item-post', the_post() );
 
-          endwhile;
+                      endwhile;
 
-          ?>
+                      ?>
                       <nav class="blog-pagination justify-content-center d-flex">
                         <?php the_posts_pagination([
                           'prev_text' => '<span aria-hidden="true"><span class="ti-arrow-left"></span></span>',

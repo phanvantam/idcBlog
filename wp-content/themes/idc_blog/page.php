@@ -15,17 +15,8 @@
 get_header();
 ?>
     <!--================ Banner SM Section start =================-->
-  <section class="hero-banner hero-banner-sm text-center">
-    <div class="container">
-      <h1><?php the_title(); ?></h1>
-      <nav aria-label="breadcrumb" class="banner-breadcrumb">
-        <?php
-          if ( function_exists('yoast_breadcrumb') ) {
-          yoast_breadcrumb( '<div class="breadcrumb">','</div>' );
-          }
-        ?>
-      </nav>
-    </div>
+  <section class="custom-banner" style="margin-bottom: 40px;">
+    <?php dynamic_sidebar( 'sidebar-4' ); ?>
   </section>
   <!--================ Banner SM Section end =================-->
 
@@ -35,6 +26,16 @@ get_header();
           <div class="row">
               <div class="col-lg-8 posts-list">
                   <div class="single-post">
+                    <div class="box-title-custom">
+                      <h1><?php the_title(); ?></h1>
+                      <nav aria-label="breadcrumb" class="banner-breadcrumb">
+                        <?php
+                          if ( function_exists('yoast_breadcrumb') ) {
+                          yoast_breadcrumb( '<div class="breadcrumb">','</div>' );
+                          }
+                        ?>
+                      </nav>
+                    </div>
                       <div class="blog_details">
                         <?php 
                         while (have_posts ()) {

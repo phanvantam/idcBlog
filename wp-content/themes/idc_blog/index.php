@@ -14,14 +14,32 @@
 
 get_header();
 ?>
-
-        <!--================ Banner SM Section start =================-->
-  <section class="hero-banner hero-banner-sm text-center">
-    <div class="container">
-      	<h1><?php echo get_bloginfo('description'); ?></h1>
-    </div>
+<!--================ Banner SM Section start =================-->
+  <section class="custom-banner" style="margin-bottom: 40px;">
+    <?php dynamic_sidebar( 'sidebar-4' ); ?>
   </section>
   <!--================ Banner SM Section end =================-->
+<!--================ Post Section start =================-->
+<section class="slider-posts">
+	<div class="container posts">
+		<div class="owl-carousel owl-theme">
+			<?php foreach(get_random() as $item): ?>
+			<div>
+				<div class="card-service text-center" style="background:#fff; padding:0 0;">
+					<a title="<?php echo $item["title"]; ?>" href="<?php echo $item["link"]; ?>" class="service-icon">
+						<img src="<?php echo $item["img"]["url"]; ?>" style="width:100%;" alt="<?php echo $item["img"]["alt"]; ?>">
+					</a>
+					<div style="padding:0 20px 35px; text-align:left;">
+						<h5><a href="<?php echo $item["link"]; ?>" title="<?php echo $item["title"]; ?>"><?php echo $item["title"]; ?></a></h5>
+						<p><?php echo $item["excerpt"]; ?></p>
+					</div>
+				</div>
+			</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
+<!--================ Post Section end =================-->
 
 <?php
 get_template_part('template-parts/page-list');
