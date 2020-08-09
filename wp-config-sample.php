@@ -17,6 +17,8 @@
  *
  * @package WordPress
  */
+define('API_SUBMIT_CONTACTS', 'http://idc.local/apiContacts.html');
+define("CAPTCHA_SITE_KEY", "6Lf5m7wZAAAAAKJYF2c_Q4vG7nfEJzhhIzNgRRr9");
 
 define('WP_HOME','http://localhost');
 define('WP_SITEURL','http://localhost');

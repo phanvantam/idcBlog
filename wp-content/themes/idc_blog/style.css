@@ -1657,7 +1657,7 @@ h3 {
     height: 48px;
     padding-left: 18px;
     font-size: 13px;
-    background: 0 0
+    background: #fff
 }
 
 .form-contact .form-control:focus {
@@ -2857,7 +2857,9 @@ button.button {
 }
 
 .button-contactForm {
-    border-radius: 5px
+    border-radius: 5px;
+    width: 100%;
+    background: linear-gradient(to right bottom, #3d59a9 0, #175bb5 100%)!important
 }
 
 .footer-area {
