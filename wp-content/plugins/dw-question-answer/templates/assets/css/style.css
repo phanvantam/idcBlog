@@ -1,5 +1,5 @@
 .dwqa-container {
-	box-shadow: border-box
+	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
 
