@@ -37,6 +37,12 @@ ul {
     margin: 0;
     padding: 0
 }
+.blog_details ul{
+    list-style: disc;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 40px;
+}
 
 a:hover {
     text-decoration: none
@@ -58,7 +64,7 @@ h4,
 h5,
 h6 {
     font-family: Roboto-Regular, Roboto, sans-serif;
-    line-height: 1.8
+    line-height: 1.5
 }
 
 .h1,
@@ -68,10 +74,6 @@ h1 {
 
 @media (min-width:992px) {
 
-    .h1,
-    h1 {
-        font-size: 55px
-    }
 }
 
 .h2,
@@ -91,7 +93,12 @@ h2 {
 h3 {
     font-size: 20px
 }
-
+strong{
+    font-weight: 600;
+}
+.aligncenter{
+    text-align: center;
+}
 .blog_item_img .blog_item_date,
 .button,
 .card-pricing:hover .button,

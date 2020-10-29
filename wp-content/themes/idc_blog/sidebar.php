@@ -39,7 +39,7 @@ $recent_posts = wp_get_recent_posts(array(
    <div class="blog_right_sidebar">
       <?php if(!is_mobile()): ?>
       <aside class="single_sidebar_widget search_widget">
-         <form action="/">
+         <form action="/blog/">
             <div class="form-group">
                <div class="input-group mb-3">
                   <input type="text" class="form-control" name="s" value="<?php echo get_search_query(); ?>" placeholder="Từ khóa tìm kiếm">
