@@ -381,8 +381,7 @@ function amp_loop_date($args=array()){
     }else{
     	$post_date =  human_time_diff(
     						get_the_time('U', get_the_ID() ), 
-    						current_time('timestamp') ) .' '. ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],
-    						'ago');
+    						current_time('timestamp') ) .' trước';
     }
     $post_date = apply_filters('ampforwp_modify_post_date',$post_date);
     echo '<div class="loop-date">'.esc_html($post_date).'</div>';

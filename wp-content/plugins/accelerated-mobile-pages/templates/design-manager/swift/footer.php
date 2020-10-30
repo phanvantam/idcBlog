@@ -14,7 +14,7 @@ if ( isset($redux_builder_amp['footer-type']) && '1' == $redux_builder_amp['foot
 	<div class="f-w-f1">
 		<div class="cntr">
 			<div class="f-w">
-				<?php 
+				<?php
 				$sidebar_output = '';
 				$sanitized_sidebar = ampforwp_sidebar_content_sanitizer('swift-footer-widget-area');
 				if ( $sanitized_sidebar) {
@@ -26,7 +26,7 @@ if ( isset($redux_builder_amp['footer-type']) && '1' == $redux_builder_amp['foot
 						return '<form'.$match[1].' target="_top">'.$match[2].'</form>';
 					}else{
 						return '<form'.$match[1].'>'.$match[2].'</form>';
-					}	
+					}
 					}, $sidebar_output);
 				}
 	            echo do_shortcode($sidebar_output); // amphtml content, no kses
@@ -35,28 +35,6 @@ if ( isset($redux_builder_amp['footer-type']) && '1' == $redux_builder_amp['foot
 		</div>
 	</div>
 	<?php endif; ?>
-	<div class="f-w-f2">
-		<div class="cntr">
-			<?php if( ampforwp_get_setting('swift-menu') ){ if ( has_nav_menu( 'amp-footer-menu' ) ) { ?>
-			<div class="f-menu">
-				<nav>
-	              <?php
-	              $menu_args = array(
-	                  'theme_location' => 'amp-footer-menu',
-	                  'link_before'     => '<span>',
-	                  'link_after'     => '</span>',
-	                  'echo' => false
-	              );
-	              $menu = amp_menu(true, $menu_args, 'footer'); ?>
-	           </nav>
-			</div>
-			<?php } }?>
-			<div class="rr">
-				<?php amp_non_amp_link(); ?>
-            <?php do_action('amp_footer_link'); ?>
-			</div>
-		</div>
-	</div>
 </footer>
 <?php }
 }

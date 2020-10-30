@@ -3284,8 +3284,8 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-non-amp-page-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('View Non-AMP Version', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('View Non-AMP Version','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Xem phiên bản đầy đủ', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Xem phiên bản đầy đủ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
@@ -3300,8 +3300,8 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-recent-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Recent Posts', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Recent Posts','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Bài viết mới', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Bài viết mới','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
@@ -3340,31 +3340,31 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-page-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Page', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Page','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Trang', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Trang','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-archives-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Archives', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Archives','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Lưu trữ', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Lưu trữ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-breadcrumbs-search-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Search results for', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Search results for','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Kết quả tìm kiếm ', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Kết quả tìm kiếm ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-footer-text',
                        'type'     => 'textarea',
-                       'title'    => esc_html__('Footer', 'accelerated-mobile-pages'),
+                       'title'    => esc_html__('Chân trang', 'accelerated-mobile-pages'),
                        'default'  => esc_html__('All Rights Reserved','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
@@ -3372,8 +3372,8 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-categories-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Categories', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Categories: ','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Danh mục', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Danh mục: ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
@@ -3388,8 +3388,8 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-by-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('By', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('By','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Bởi', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Bởi','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
@@ -3412,24 +3412,24 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-view-comments-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('View Comments', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('View Comments','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Xem thảo luận', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Xem thảo luận','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-leave-a-comment-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Leave a Comment', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Leave a Comment','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Thảo luận', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Thảo luận','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-comments-closed',
                        'type'     => 'text',
-                       'title'    => esc_html__('Comments are closed.', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Comments are closed.','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Thảo luận đã đóng.', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Thảo luận đã đóng.','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
@@ -3468,24 +3468,24 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-published-date-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('This post was published on ', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('This post was published on ','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Cập nhật ', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Cập nhật ','accelerated-mobile-pages'),
                        'placeholder'=> esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-modified-date-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('This post was last modified on ', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('This post was last modified on ','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Cập nhật ', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Cập nhật ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                    array(
                        'id'       => 'amp-translator-archive-cat-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Category (archive title)', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Category: ','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Danh mục (archive title)', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Danh mục: ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
@@ -3500,24 +3500,24 @@ $e_commerce_support[] = array(
                    array(
                        'id'       => 'amp-translator-show-more-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('View More Posts (Widget Button)', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('View More Posts','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Xem thêm (Widget Button)', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Xem thêm','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                     array(
                        'id'       => 'amp-translator-next-read-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Next Read', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Next Read: ','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Bài sau', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Bài sau: ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),
                     array(
                        'id'       => 'amp-translator-read-more',
                        'type'     => 'text',
-                       'title'    => esc_html__('Read More', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Read More','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Xem thêm', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Xem thêm','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                     ),
@@ -3532,8 +3532,8 @@ $e_commerce_support[] = array(
                      array(
                        'id'       => 'amp-translator-share-text',
                        'type'     => 'text',
-                       'title'    => esc_html__('Share', 'accelerated-mobile-pages'),
-                       'default'  => esc_html__('Share','accelerated-mobile-pages'),
+                       'title'    => esc_html__('Chia sẻ', 'accelerated-mobile-pages'),
+                       'default'  => esc_html__('Chia sẻ','accelerated-mobile-pages'),
                        'placeholder'=>esc_html__('write here','accelerated-mobile-pages'),
                        'required' => array( 'amp-use-pot', '=' , 0 )
                    ),

@@ -52,6 +52,6 @@ if( !function_exists( 'amp_framework_logo_styles' ) ){
   }
    $width .= 'px';
    ?>
-    .amp-logo amp-img{width:<?php echo esc_attr($max_width); ?>}
+    .amp-logo amp-img{width:125px}
  <?php }
 }

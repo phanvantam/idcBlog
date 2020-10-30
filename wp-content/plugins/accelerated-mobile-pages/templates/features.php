@@ -2282,7 +2282,7 @@ function ampforwp_facebook_comments_markup() {
 
 		$facebook_comments_markup = '<section class="amp-wp-content post-comments amp-wp-article-content amp-facebook-comments" id="comments">';
 		if(true == ampforwp_get_setting('ampforwp-facebook-comments-title')){
-			$facebook_comments_markup .= '<h5>'. esc_html__(ampforwp_translation(ampforwp_get_setting('ampforwp-facebook-comments-title'), 'Leave a Comment'),'accelerated-mobile-pages') .'</h5>';
+			$facebook_comments_markup .= '<h5>Bình luận</h5>';
 		}
 		$facebook_comments_markup .= '<amp-facebook-comments width=486 height=357
 	    	layout="responsive" '.'data-locale = "'.esc_attr($lang).'"'.' data-numposts=';
@@ -3631,7 +3631,7 @@ function ampforwp_frontpage_comments() {
 			if ( comments_open($postID) ) {
 				$comment_button_url = add_query_arg( array( 'nonamp' => '1' ),  $comment_button_url );?>
 				<div class="cmt-button-wrapper">
-				    <a href="<?php echo esc_url( $comment_button_url ) . '#commentform' ?>" rel="nofollow"><?php  echo esc_html(ampforwp_translation( $redux_builder_amp['amp-translator-leave-a-comment-text'], 'Leave a Comment'  )); ?></a>
+				    <a href="<?php echo esc_url( $comment_button_url ) . '#commentform' ?>" rel="nofollow">Bình luận</a>
 				</div><?php
 				}?>
 		</div> <?php
@@ -5415,19 +5415,19 @@ if( ! function_exists( 'ampforwp_full_post_date_loops' ) ){
 				$full_date = $redux_builder_amp['ampforwp-post-date-format-text'];
 				// Change the % days into the actual number of days
 				$full_date = str_replace('% days', $date, $full_date);
-				$full_date = str_replace('ago', ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'ago'), $full_date);
+				$full_date = str_replace('trước', ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'trước'), $full_date);
 			}
 		}
 	}
 	if(is_single() && 1 == $redux_builder_amp['ampforwp-post-date-format']){
 		$time = ampforwp_get_the_time();
 		$date 		= human_time_diff( $time, current_time('timestamp') );
-		$full_date 	= human_time_diff( $time, current_time('timestamp') ) .' '. ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'ago');
+		$full_date 	= human_time_diff( $time, current_time('timestamp') ) .' '. ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'trước');
 		if( $redux_builder_amp['ampforwp-post-date-format-text'] ){
 			$full_date = $redux_builder_amp['ampforwp-post-date-format-text'];
 			// Change the % days into the actual number of days
 			$full_date = str_replace('% days', $date, $full_date);
-			$full_date = str_replace('ago', ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'ago'), $full_date);
+			$full_date = str_replace('trước', ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'trước'), $full_date);
 		}
 	}
 	return $full_date;

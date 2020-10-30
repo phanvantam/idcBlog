@@ -17,7 +17,7 @@ if( !ampforwp_levelup_compatibility('hf_builder_head') ){
 <?php if($header_type == '1'){?>
 <?php do_action('ampforwp_admin_menu_bar_front'); 
       do_action('ampforwp_reading_progress_bar'); ?>
-<header class="header h_m h_m_1">
+<header class="header h_m h_m_1" style="border-bottom: none">
     <?php do_action('ampforwp_header_top_design4'); ?>
     <input type="checkbox" id="offcanvas-menu" class="tg" />
     <div class="hamb-mnu">
@@ -111,26 +111,10 @@ if( !ampforwp_levelup_compatibility('hf_builder_head') ){
         <label for="offcanvas-menu" class="fsc"></label>
         <div class="cntr">
             <div class="head h_m_w">
-                <?php  if(ampforwp_get_setting('ampforwp-amp-menu-swift') == true) {?>
-                <div class="h-nav">
-                    <label for="offcanvas-menu" class="t-btn"></label>
-                </div><!--end menu-->
-                <?php } ?>
                 <div class="logo">
                     <?php amp_logo(); ?>
                 </div><!-- /.logo -->
                 <div class="h-1">
-                    <?php if( true == $redux_builder_amp['amp-swift-search-feature'] ){ ?>
-                        <div class="h-srch h-ic">
-                            <a title="search" class="lb icon-src" href="#search"></a>
-                            <div class="lb-btn"> 
-                                <div class="lb-t" id="search">
-                                   <?php amp_search();?>
-                                   <a title="close" class="lb-x" href="#"></a>
-                                </div> 
-                            </div>
-                        </div><!-- /.search -->
-                    <?php } ?>
                     <?php if( isset( $redux_builder_amp['amp-swift-cart-btn'] ) && true == $redux_builder_amp['amp-swift-cart-btn'] ) { ?>
                         <div class="h-shop h-ic">
                             <a href="<?php echo esc_url(ampforwp_wc_cart_page_url()); ?>" class="isc"></a>
@@ -140,7 +124,7 @@ if( !ampforwp_levelup_compatibility('hf_builder_head') ){
                         <div class="h-call h-ic">
                             <a title="call telephone" href="tel:<?php echo esc_attr($redux_builder_amp['enable-amp-call-numberfield']);?>"></a>
                         </div>
-                    <?php } ?> 
+                    <?php } ?>
                     <?php do_action('ampforwp_header_elements') ?>
                 </div>
                 <div class="clearfix"></div>

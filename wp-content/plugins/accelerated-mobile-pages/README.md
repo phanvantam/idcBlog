@@ -4,7 +4,7 @@ Tags: AMP, accelerated mobile pages, mobile, amp project, google amp, amp wp, go
 Donate link: https://www.paypal.me/Kaludi/25
 Requires at least: 3.0
 Tested up to: 5.5
-Stable tag: 1.0.62.2
+Stable tag: 1.0.66.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -193,27 +193,36 @@ Device testing done through [BrowserStack](https://www.browserstack.com)
 
 == Changelog ==
 
-= 1.0.62.2 (21st August 2020) =
-* Fixed: Gutenberg gallery block caption appearing at the end of the content #4716
-* Fixed: Validation error - accordion section must have 2 child tags #4208
+= 1.0.66.3 (29th October 2020) =
+* Fixed: Content not visible in AMP Takeover #4744
 
-= 1.0.62.1 (17th August 2020) =
-* Improvement: Removed unwanted javascript from AMP pages #4689
-* Fixed: Call to undefined function fifu_amp_url() #4688
-* Fixed: jQuery.fn.live() is deprecated warnings #4706
+= 1.0.66.2 (28th October 2020) =
+* Fixed: Content not visible after 1.0.66 update #4744
 
-= 1.0.62 (15th August 2020) =
-* Improvement: Added Yoast Local SEO plugin compatibility #4170
-* Improvement: Added option for changing the tags for the accordion module in AMP Page Builder #4208
-* Improvement: Added option for showing primary category of Yoast #4495
-* Improvement: Added condition for adding infinite scroll in AMP Woocommerce #4673
-* Improvement: Added excerpt option in in-content related posts #3981
-* Fixed: AMP not working on the Homepage with WP Ultimate recipe plugin #4538
-* Fixed: CSS overiding issue for the list and accourdion modules in AMP Page Builder #4674
-* Fixed: Alignment issue on homepage in design one #4676
-* Fixed: Debug Errors #4671
+= 1.0.66.1 (26th October 2020) =
+* Fixed: Validation error due to amp-web-push AMP component script #4796
+* Fixed: Validation error due to amp-fx-flying-carpet AMP component script #4794
 
-= 1.0.61.2 (5th August 2020) =
-* Fixed: Removed Helpscout Beacon from Options Panel #4682
+= 1.0.66 (24th October 2020) =
+* Improvement: Added filter to modify GDPR popup output #4778
+* Improvement: Added Polylang string transaltion support #4784
+* Improvement: Added IO Technologies company analytics tracking code. #4753
+* Improvement: Added Ultimate Membership Pro Compatibility for AMP Extension #4790
+* Improvement: Code improvements #4744
+* Fixed: Validation error when the "OMGF | Host Google Fonts Locally" plugin is active #4775
+* Fixed: Margin top added in the twitter embed through the Gutenberg editor #4750
+* Fixed: Truepush push notification not working in AMP #4644
+* Fixed: Wrong amphtml on category and tags when ?amp is selected #4780
+* Fixed: Missing the amp-bind script tag #4776
+* Fixed: Two H1 tags appears in AMP #4786
+* Fixed: Debug warnings #4767
+* Fixed: Fallback images removed when Convert AMP to WP theme is enabled #4773 
+
+= 1.0.65.2 (17th October 2020) =
+* Fixed: Menu not appearing in AMP #4657
+* Fixed: Wrong amphtml on homepage when ?amp is selected #4780
+
+= 1.0.65.1 (16th October 2020) =
+* Fixed: Jquery issue fixed due to Easy select option for category module #4672
 
 Full changelog available [ at changelog.txt](https://plugins.svn.wordpress.org/accelerated-mobile-pages/trunk/changelog.txt)

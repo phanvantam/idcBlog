@@ -3,7 +3,7 @@
 Plugin Name: Accelerated Mobile Pages
 Plugin URI: https://wordpress.org/plugins/accelerated-mobile-pages/
 Description: AMP for WP - Accelerated Mobile Pages for WordPress
-Version: 1.0.62.2
+Version: 1.0.66.3
 Author: Ahmed Kaludi, Mohammed Kaludi
 Author URI: https://ampforwp.com/
 Donate link: https://www.paypal.me/Kaludi/25
@@ -20,7 +20,7 @@ define('AMPFORWP_PLUGIN_DIR_URI', plugin_dir_url(__FILE__));
 define('AMPFORWP_DISQUS_URL',plugin_dir_url(__FILE__).'includes/disqus.html');
 define('AMPFORWP_IMAGE_DIR',plugin_dir_url(__FILE__).'images');
 define('AMPFORWP_MAIN_PLUGIN_DIR', plugin_dir_path( __DIR__ ) );
-define('AMPFORWP_VERSION','1.0.62.2');
+define('AMPFORWP_VERSION','1.0.66.3');
 define('AMPFORWP_EXTENSION_DIR',plugin_dir_path(__FILE__).'includes/options/extensions');
 if(!defined('AMPFROWP_HOST_NAME')){
 	$urlinfo = get_bloginfo('url');
@@ -700,7 +700,7 @@ if ( ! function_exists('ampforwp_init') ) {
 
 		do_action( 'amp_init' );
 
-		load_plugin_textdomain( 'accelerated-mobile-pages', false, trailingslashit(AMPFORWP_PLUGIN_DIR) . 'languages' );
+		load_plugin_textdomain( 'accelerated-mobile-pages', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 		add_rewrite_endpoint( AMP_QUERY_VAR, EP_PERMALINK );
 		add_post_type_support( 'post', AMP_QUERY_VAR );
@@ -1061,7 +1061,9 @@ function ampforwp_get_all_post_types(){
     if( ampforwp_get_setting('ampforwp-archive-support') && ampforwp_get_setting('ampforwp-archive-support-cat') ){
     	$post_types['category'] = 'category';
     }
-
+    if( ampforwp_get_setting('ampforwp-archive-support') && ampforwp_get_setting('ampforwp-archive-support-tag')){
+    	$post_types['tag'] = 'post_tag';
+    }
     $custom_taxonomies = ampforwp_get_setting('ampforwp-custom-taxonomies');
 	if(ampforwp_get_setting('ampforwp-archive-support') && !empty($custom_taxonomies) ){
 		foreach($custom_taxonomies as $taxonomy){
@@ -1079,7 +1081,7 @@ function ampforwp_get_all_post_types(){
         }
         $post_types = array_merge($post_types, $selected_post_types);
     }
-    if(class_exists('WPUltimateRecipe') && ampforwp_is_home()){
+    if(class_exists('WPUltimateRecipe') && function_exists('ampforwp_is_home') && ampforwp_is_home()){
 	    	$post_types['recipe'] = 'recipe';
 	}
     return $post_types;

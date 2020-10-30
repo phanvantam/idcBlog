@@ -862,7 +862,7 @@ function ampforwp_seopress_social(){
 				echo $seopress_social_twitter_card_summary."\n"; // escaped above
 			}
 			if (isset($options['seopress_social_twitter_card']) && isset($options['seopress_social_accounts_twitter']) ) {
-				$seopress_social_twitter_card_site = '<meta name="twitter:site" content="'.esc_attr($options['seopress_social_accounts_twitter']).'" />';	
+				$seopress_social_twitter_card_site = '<meta name="twitter:site" content="'.esc_attr($options['seopress_social_accounts_twitter']).'" />';
 				//Hook on post Twitter card site - 'seopress_social_twitter_card_site'
 				if (has_filter('seopress_social_twitter_card_site')) {
 					$seopress_social_twitter_card_site = apply_filters('seopress_social_twitter_card_site', $seopress_social_twitter_card_site);
